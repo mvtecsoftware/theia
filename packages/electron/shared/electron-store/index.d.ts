@@ -1,2 +1,2 @@
-import ElectronStore = require('electron-store');
-export = ElectronStore;
+export * from 'electron-store';
+export { default as Conf } from 'conf';

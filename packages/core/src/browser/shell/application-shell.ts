@@ -600,10 +600,10 @@ export class ApplicationShell extends Widget {
                     // the files were dragged from the outside the workspace
                     Array.from(event.dataTransfer.files).forEach(async file => {
                         if (environment.electron.is()) {
-                            if (file.path) {
+                            /*if (file.path) {
                                 const fileUri = URI.fromFilePath(file.path);
                                 openUri(fileUri);
-                            }
+                            }*/
                         } else {
                             const fileContent = await file.text();
                             const fileName = file.name;

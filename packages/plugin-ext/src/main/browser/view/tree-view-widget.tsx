@@ -724,6 +724,7 @@ export class TreeViewWidget extends TreeViewWelcomeWidget {
                         if (f) {
                             const fileId = this.dndFileContentStore.addFile(f);
                             files.push(fileId);
+                            /*
                             const uri = f.path ? {
                                 scheme: 'file',
                                 path: f.path,
@@ -732,6 +733,7 @@ export class TreeViewWidget extends TreeViewWelcomeWidget {
                                 fragment: ''
                             } : undefined;
                             items.push([transferItem.type, new DataTransferFileDTO(f.name, fileId, uri)]);
+                            */
                         } else {
                             const textData = event.dataTransfer.getData(transferItem.type);
                             if (textData) {

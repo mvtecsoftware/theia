@@ -33,7 +33,7 @@ import { MaybePromise } from '../common/types';
 import { ContributionProvider } from '../common/contribution-provider';
 import { ElectronSecurityTokenService } from './electron-security-token-service';
 import { ElectronSecurityToken } from '../electron-common/electron-token';
-import Storage = require('electron-store');
+import ElectronStore from '../../electron-shared/electron-store';
 import { CancellationTokenSource, Disposable, DisposableCollection, Path, isOSX, isWindows } from '../common';
 import { DEFAULT_WINDOW_HASH, WindowSearchParams } from '../common/window';
 import { TheiaBrowserWindowOptions, TheiaElectronWindow, TheiaElectronWindowFactory } from './theia-electron-window';
@@ -172,7 +172,7 @@ export class ElectronMainApplication {
 
     protected isPortable = this.makePortable();
 
-    protected readonly electronStore = new Storage<{
+    protected readonly electronStore = new ElectronStore<{
         windowstate?: TheiaBrowserWindowOptions
     }>();
 

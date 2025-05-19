@@ -72,8 +72,8 @@ export class SomeClass {
 
 - `@theia/core/electron-shared/...`
   - `native-keymap` (from [`native-keymap@^2.2.1`](https://www.npmjs.com/package/native-keymap))
-  - `electron` (from [`electron@30.1.2`](https://www.npmjs.com/package/electron/v/30.1.2))
-  - `electron-store` (from [`electron-store@^8.0.0`](https://www.npmjs.com/package/electron-store))
+  - `electron-store` (from [`electron-store@^10.0.1`](https://www.npmjs.com/package/electron-store))
+  - `electron` (from [`electron@36.2.1`](https://www.npmjs.com/package/electron/v/36.2.1))
 - `@theia/core/shared/...`
   - `@lumino/algorithm` (from [`@lumino/algorithm@^2.0.2`](https://www.npmjs.com/package/@lumino/algorithm))
   - `@lumino/commands` (from [`@lumino/commands@^2.3.1`](https://www.npmjs.com/package/@lumino/commands))

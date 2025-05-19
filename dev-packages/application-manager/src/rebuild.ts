@@ -213,19 +213,20 @@ async function revertBrowserModules(browserModuleCache: string, modules: string[
 async function runElectronRebuild(modules: string[], forceAbi: NodeABI | undefined, token: ExitToken): Promise<number> {
     const todo = modules.join(',');
     return new Promise(async (resolve, reject) => {
-        let command = `npx --no-install electron-rebuild -f -w=${todo} -o=${todo}`;
+        let command = `npx @electron/rebuild -f -w=${todo} -o=${todo}`;
         if (forceAbi) {
             command += ` --force-abi ${forceAbi}`;
         }
         const electronRebuild = cp.spawn(command, {
             stdio: 'inherit',
             shell: true,
+            cwd: `${__dirname}/..`,
         });
         token.onSignal(signal => electronRebuild.kill(signal));
         electronRebuild.on('error', reject);
         electronRebuild.on('close', (code, signal) => {
             if (signal) {
-                reject(new Error(`electron-rebuild exited with "${signal}"`));
+                reject(new Error(`@electron/rebuild exited with "${signal}"`));
             } else {
                 resolve(code!);
             }
